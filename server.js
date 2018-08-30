@@ -53,6 +53,12 @@ app.delete('/shopping-list/:id', (req, res) => {
   res.status(204).end();
 });
 
+app.delete('/recipes/:itemId', (req, res) => {
+  Recipes.delete(req.params.itemId);
+  console.log(`Deleted shopping list item \`${req.params.itemId}\``);
+  res.status(204).end();
+});
+
 
 // when new recipe added, ensure has required fields. if not,
 // log error and return 400 status code with hepful message.
